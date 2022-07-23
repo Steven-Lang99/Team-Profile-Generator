@@ -24,7 +24,7 @@ Please follow these steps to install:
 
 ## License
 
-[()]()
+[![MIT License](https://img.shields.io/badge/License-MIT--License-red)](https://choosealicense.com/licenses/mit/)
 
 Please click on the license to read more.
 
