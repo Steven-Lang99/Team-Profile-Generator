@@ -70,7 +70,6 @@ function cardFunction(data) {
 //function to return the manager card when it is selected.
 function managerCard(manager) {
     return `
-    /* <!-- Manager --> */
     <div class="card col-3">
         <div class="card-header">
             <h1>${manager.name}</h1>
@@ -78,7 +77,7 @@ function managerCard(manager) {
         </div>
         <div class="card-body">
             <p class="id">ID: ${manager.id}</p>
-            <p class="email">EMAIL: ${manager.email}</p>
+            <p class="email">EMAIL: <a href="mailto:${manager.email}">${manager.email}</a></p>
             <p class="office">OFFICE NUMBER: ${manager.officeNumber}</p>
         </div>
     </div>
@@ -87,7 +86,6 @@ function managerCard(manager) {
 //function to return the intern card when it is selected.
 function internCard(intern) {
     return `
-/* <!-- Intern --> */
 <div class="card col-3">
     <div class="card-header">
         <h1>${intern.name}</h1>
@@ -95,7 +93,7 @@ function internCard(intern) {
     </div>
     <div class="card-body">
         <p class="id">ID: ${intern.name}</p>
-        <p class="email">EMAIL: ${intern.name}</p>
+        <p class="email">EMAIL: <a href="mailto:${intern.email}">${intern.email}</a></p>
         <p class="school">SCHOOL: ${intern.school}</p>
     </div>
 </div>
@@ -104,7 +102,6 @@ function internCard(intern) {
 //function to return the engineer card when it is selected.
 function engineerCard(engineer) {
     return `
-/* <!-- Engineer --> */
 <div class="card col-3">
     <div class="card-header">
         <h1>${engineer.name}</h1>
@@ -112,8 +109,8 @@ function engineerCard(engineer) {
     </div>
     <div class="card-body">
         <p class="id">ID: ${engineer.id}</p>
-        <p class="email">EMAIL: ${engineer.email}</p>
-        <p class="github">GITHUB:https://github.com/${engineer.github}/</p>
+        <p class="email">EMAIL: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+        <p class="github">GITHUB: <a href="https://github.com/${engineer.github}/">${engineer.github}</a></p>
     </div>
 </div>
 `
