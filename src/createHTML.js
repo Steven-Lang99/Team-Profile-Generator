@@ -1,5 +1,5 @@
-
-const teamprofile = function () {
+// function that will be printed in inde file.
+function teamprofile(data) {
     return `
 <html lang="en">
 
@@ -24,7 +24,7 @@ const teamprofile = function () {
     <main>
         <div class="container">
             <div class="row justify-content-center" id="team">
-
+            ${cardFunction(data)}
 
 
     </main>
@@ -39,54 +39,88 @@ const teamprofile = function () {
 </html>
 `
 }
+//funtion for what card will be selected then adding it to a string to pass to the cardFunction in teamprofile
+function cardFunction(data) {
 
-const managerCard = function () {
+    var cardString = ""
+
+    for (let i = 0; i < data.length; i++) {
+        const employee = data[i];
+        const role = employee.getRole();
+
+        if (role === 'Manager') {
+            const managerPicked = managerCard(employee)
+
+            cardString += managerPicked
+
+        }
+        if (role === 'Intern') {
+            const internPicked = internCard(employee)
+
+            cardString += internPicked
+        }
+        if (role === 'Engineer') {
+            const engineerPicked = engineerCard(employee)
+
+            cardString += engineerPicked
+        }
+    }
+    return cardString
+}
+//function to return the manager card when it is selected.
+function managerCard(manager) {
     return `
     /* <!-- Manager --> */
     <div class="card col-3">
         <div class="card-header">
-            <h1>Manager</h1>
+            <h1>${manager.name}</h1>
             <h2>Manager</h2>
         </div>
         <div class="card-body">
-            <p class="id">ID:</p>
-            <p class="email">EMAIL:</p>
-            <p class="office">OFFICE NUMBER: </p>
+            <p class="id">ID: ${manager.id}</p>
+            <p class="email">EMAIL: ${manager.email}</p>
+            <p class="office">OFFICE NUMBER: ${manager.officeNumber}</p>
         </div>
     </div>
     `
+}
+//function to return the intern card when it is selected.
+function internCard(intern) {
+    return `
+/* <!-- Intern --> */
+<div class="card col-3">
+    <div class="card-header">
+        <h1>${intern.name}</h1>
+        <h2>Intern</h2>
+    </div>
+    <div class="card-body">
+        <p class="id">ID: ${intern.name}</p>
+        <p class="email">EMAIL: ${intern.name}</p>
+        <p class="school">SCHOOL: ${intern.school}</p>
+    </div>
+</div>
+`
+}
+//function to return the engineer card when it is selected.
+function engineerCard(engineer) {
+    return `
+/* <!-- Engineer --> */
+<div class="card col-3">
+    <div class="card-header">
+        <h1>${engineer.name}</h1>
+        <h2>Engineer</h2>
+    </div>
+    <div class="card-body">
+        <p class="id">ID: ${engineer.id}</p>
+        <p class="email">EMAIL: ${engineer.email}</p>
+        <p class="github">GITHUB:https://github.com/${engineer.github}/</p>
+    </div>
+</div>
+`
 }
 
-const internCard = function () {
-    return `
-    /* <!-- Intern --> */
-    <div class="card col-3">
-        <div class="card-header">
-            <h1>Intern</h1>
-            <h2>Intern</h2>
-        </div>
-        <div class="card-body">
-            <p class="id">ID:</p>
-            <p class="email">EMAIL:</p>
-            <p class="school">SCHOOL:</p>
-        </div>
-    </div>
-    `
-}
+module.exports = teamprofile
 
-const engineerCard = function () {
-    return `
-    /* <!-- Engineer --> */
-    <div class="card col-3">
-        <div class="card-header">
-            <h1>Engineer</h1>
-            <h2>Engineer</h2>
-        </div>
-        <div class="card-body">
-            <p class="id">ID:</p>
-            <p class="email">EMAIL: </p>
-            <p class="github">GITHUB:</p>
-        </div>
-    </div>
-    `
-}
+
+
+
