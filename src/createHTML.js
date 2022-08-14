@@ -92,7 +92,7 @@ function internCard(intern) {
         <h2>Intern</h2>
     </div>
     <div class="card-body">
-        <p class="id">ID: ${intern.name}</p>
+        <p class="id">ID: ${intern.id}</p>
         <p class="email">EMAIL: <a href="mailto:${intern.email}">${intern.email}</a></p>
         <p class="school">SCHOOL: ${intern.school}</p>
     </div>

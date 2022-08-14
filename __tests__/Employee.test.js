@@ -1,44 +1,38 @@
+//Employee Test
+const Employee = require('../lib/Employee');
 
-//this is the code I was trying out for the tests. I was unable to get it working so I left it as a comment.
-// I will try to revisit this topic again.
-
-
-
-
-// const Employee = require('../lib/Employee');
+const employee = new Employee('Steven', 27, 'langloiss003@my.uwstout.edu');
+describe('Employee Name', () => {
 
 
-// describe('Employee Name', () => {
+    it('grab employee name', () => {
 
 
-//     it('grab employee name', () => {
-//         const employee = new Employee('Steven', 27, 'langloiss003@my.uwstout.edu');
+        expect(employee.getName()).toEqual(expect.any(String))
+    })
+})
+describe('Employee ID', () => {
 
-//         expect(employee.getName()).toEqual(expect.any(String))
-//     })
-// })
-// describe('Employee ID', () => {
-
-//     it('grab employee Id', () => {
+    it('grab employee Id', () => {
 
 
-//         expect(employee.getId()).toEqual(Number)
-//     })
-// })
-// describe('Employee Email', () => {
+        expect(employee.getId()).toEqual(expect.any(Number))
+    })
+})
+describe('Employee Email', () => {
 
-//     it('grab employee email', () => {
-
-
-//         expect(employee.getEmail()).toEqual(expect.stringContaining(employee.email))
-//     })
-// })
-// describe('Employee Role', () => {
+    it('grab employee email', () => {
 
 
-//     it('grabs employee role', () => {
+        expect(employee.getEmail()).toEqual(expect.stringContaining(employee.email))
+    })
+})
+describe('Employee Role', () => {
 
 
-//         expect(employee.getRole()).toEqual('Employee')
-//     })
-// })
+    it('grabs employee role', () => {
+
+
+        expect(employee.getRole()).toEqual('Employee')
+    })
+})
